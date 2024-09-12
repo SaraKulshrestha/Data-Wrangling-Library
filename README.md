@@ -24,39 +24,39 @@ Why I Built This
 I designed this library during my machine learning journey when I realized that managing data transformation tasks across different projects can become repetitive and time-consuming. I wanted a personalized, flexible tool to automate much of the data wrangling process while keeping it clean and understandable for anyone who picks up my code later.
 
 
-**How to Use**
+# How to Use
 import pandas as pd
 from datawrangler import DataWrangler
 
-# Load your dataset
+**Load your dataset**
 df = pd.read_csv("your_dataset.csv")
 
-# Initialize my Data Wrangler
+** Initialize my Data Wrangler**
 data_wrangler = DataWrangler(df)
 
-# 1. Profile the dataset
+** 1. Profile the dataset**
 data_wrangler.data_profile()
 
-# 2. Clean the data
+** 2. Clean the data**
 data_wrangler.clean_data()
 data_wrangler.fill_missing(strategy="mean")
 
-# 3. Encode categorical features
+** 3. Encode categorical features**
 data_wrangler.encode_categorical(columns=["category_column"])
 
-# 4. Scale numerical features
+** 4. Scale numerical features**
 data_wrangler.scale_features(columns=["numerical_column"], scaling_type="standard")
 
-# 5. Add polynomial features
+** 5. Add polynomial features**
 data_wrangler.add_polynomial_features(columns=["numerical_column"], degree=2)
 
-# 6. Apply Box-Cox transformation
+** 6. Apply Box-Cox transformation**
 data_wrangler.box_cox_transform(columns=["skewed_column"])
 
-# 7. Split the data
+** 7. Split the data**
 X_train, X_test, y_train, y_test = data_wrangler.split_data(target_column="target", stratify=True, handle_imbalance=True)
 
-# 8. Visualize data distributions and correlations
+** 8. Visualize data distributions and correlations**
 data_wrangler.plot_distributions(columns=["numerical_column"])
 data_wrangler.correlation_matrix()
 
